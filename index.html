@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Rodolphe Poon Développeur FullStack</title>
+	<meta charset="UTF-8">
+	<meta name="author" content="Rodolphe Poon">
+	<meta name="description" content="Page personnelle ">
+	<meta name="robots" content="index,follow">
+	<meta name="keywords" content="html,coco2d,sapper,javascript,react,node">
+	<link rel="icon" type="image/png"
+		href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAilBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwt1dXXCwsLJycl/f3/o6Ojf39+Pj4+4uLiurq6goKAREREjIyMZGRkwMDBVVVVqampFRUVNTU3////R0dFdXV3zl/MVAAAAF3RSTlMApOTxDkf9s9P3xi0l1wZ2XFCGICFpkwTWJ9YAAAEKSURBVDjLhZPreoMgDIYBz7POzm4L2uK55+7+b2+zCkK04/sX8z4kfkkIUdptaej4fsSCNH4nC8VZEsEkn1EPIW7KwJBDN3p+E/iAFXra82+wIraV+c/V/B/xMdWnY8wXRBI/ga+x/rnpFwQd/mWXjEF+r48YiIYi6RTkomw6TAQucWWH+f5WtrgPxyOeowB+ExV+4ptkMAPwI3JsFwl0AC7igtokoQHAQZxNgjAT4FV5/RcA3pYnA0AlALrmoROoyUHHoui1JrMFAP1+Nj00jJJfT4+2U0bNVouDUn2vlNVqWNe60FRxOSw1buC6tHHLhVnTc2HUysGrlbMurX3t7YdjPz378b4+/1/u+0kzGIRgoAAAAABJRU5ErkJggg==" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+		integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<base href="https://rodolphepoon.github.io/en" target="_blank">
+	<style>
+		html {
+			background-color: black;
+			color: white;
+			font-family: Arial;
+			font-size: 16px;
+		}
+
+		body {
+			display: flex;
+			flex-direction: row;
+			max-width: 1200px;
+			margin: 0 auto;
+			height: 100vh;
+		}
+
+		aside {
+			flex: 4;
+			display: flex;
+			flex-direction: column;
+			padding: 20px;
+		}
+
+		h1 {
+			overflow: hidden;
+			border-right: 2px solid white;
+			white-space: nowrap;
+			animation: typing 2s steps(13, end) forwards,
+				blink-caret 1s step-end infinite;
+			font-size: 1.6rem;
+		}
+
+		@keyframes typing {
+			from {
+				width: 0
+			}
+
+			to {
+				width: 100%
+			}
+		}
+
+		/* The typewriter cursor effect */
+		@keyframes blink-caret {
+
+			from,
+			to {
+				border-color: transparent
+			}
+
+			50% {
+				border-color: white;
+			}
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		footer {
+			margin-top: auto;
+		}
+
+		main {
+			scroll-behavior: smooth;
+			overflow-y: auto;
+			flex: 8;
+			-ms-overflow-style: none;
+			/* IE and Edge */
+			scrollbar-width: none;
+			/* Firefox */
+		}
+
+		/* Hide scrollbar for Chrome, Safari and Opera */
+		main::-webkit-scrollbar {
+			display: none;
+		}
+
+		ol>li {
+			list-style: decimal-leading-zero;
+
+			&:focus {
+				color: red;
+			}
+		}
+
+		section {
+			margin: 40px 0;
+			padding: 0 20px
+		}
+
+		.hero {
+			display: block;
+			margin: 80px auto;
+		}
+
+		article {
+			margin: 5px;
+			background-color: rgb(40, 40, 40);
+			padding: 20px;
+			transition: all .2s ease-in-out;
+		}
+
+		details {
+			cursor: pointer;
+			interpolate-size: allow-keywords;
+
+			&::details-content {
+				transition:
+					block-size 1s,
+					content-visibility 1s allow-discrete;
+				overflow: hidden;
+				block-size: 0;
+				/* Or also:  height:0; */
+			}
+
+			&[open]::details-content {
+				block-size: auto;
+				/* Or also:  height:auto; */
+			}
+
+			>summary {
+				list-style: none;
+			}
+		}
+
+		article:hover {
+			transform: scale(1.05);
+			background-color: rgb(54, 54, 54);
+		}
+
+		address {
+			color: rgb(133, 133, 133);
+		}
+
+		q {
+			color: rgb(133, 133, 133);
+		}
+
+		em {
+			color: white;
+			font-size: 1.1em;
+			font-style: normal;
+			font-weight: 700;
+		}
+
+		.mobile-footer {
+			display: none;
+		}
+
+
+		.links i {
+			margin: 10px 3px;
+		}
+
+		@media screen and (max-width:992px) {
+			body {
+				flex-direction: column;
+			}
+
+			nav {
+				display: none;
+			}
+
+			.credit {
+				display: none;
+			}
+
+			.mobile-footer {
+				display: block;
+				text-align: center;
+			}
+
+
+
+			main {
+				overflow: unset;
+			}
+
+			h2 {
+				position: sticky;
+				top: 0;
+				background-color: black;
+				padding: 20px;
+			}
+		}
+
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+			grid-auto-rows: 1fr;
+		}
+	</style>
+</head>
+
+<body>
+	<aside>
+		<header>
+			<span style="display: inline-block;">
+				<h1>Rodolphe POON</h1>
+			</span>
+			<h2>Développeur FullStack</h2>
+			<address>Paris, France</address>
+		</header>
+		<br />
+		<q>
+			Fabriquer les nouvelles <em>fonctionnalités</em> qui améliorent <em>l'expérience utilisateurs</em>.
+		</q>
+		<nav>
+			<ol>
+				<li>
+					<a href="#portfolio" target="_self">Projets</a>
+				</li>
+				<li>
+					<a href="#experience" target="_self">Expérience professionnelle</a>
+				</li>
+				<li>
+					<a href="#other" target="_self">Fourre-tout</a>
+				</li>
+			</ol>
+		</nav>
+		<footer>
+			<div class='links'>
+				<a href="https://www.linkedin.com/in/wololowololo/">
+					<i class="fa-brands fa-linkedin-in"></i>
+				</a>
+				<a href="https://github.com/RodolphePoon">
+					<i class="fa-brands fa-github"></i>
+				</a>
+				<a href="mailto:poon.rodolphe@hotmail.fr">
+					<i class="fa-regular fa-envelope"></i>
+				</a>
+			</div>
+			<div class="credit">Rodolphe Poon - 2025 </div>
+		</footer>
+	</aside>
+	<main>
+		<img class="hero" src="/logo.svg" alt="logo" height="100" width="100" />
+		<section id="portfolio">
+			<h2>
+				01. Quelques-uns de mes projets (plus ou moins aboutis)
+			</h2>
+			<div class='grid'>
+				<article>
+					<a href="/" target="_self">
+						<h3>rodolphepoon.github.io - 2025</h3>
+						<p>Mon site sans JavaScript. Explorer ce qu'on peut faire avec uniquement du HTML et CSS</p>
+					</a>
+				</article>
+				<article>
+					<a href="/sql-viewer" target="_self">
+						<h3>Sql viewer - 2025</h3>
+						<p>Affiche les données d'une base SQL, vibe codée avec Mistral AI.
+						</p>
+					</a>
+				</article>
+				<article>
+					<a href="/eskimo" target="_self">
+						<h3>eskimo - 2020</h3>
+						<p>Un mini-jeu avec COCOs.JS, inspiré par l'arène d'Atalanopolis dans Pokémon Rubis et Saphir.
+							Le but est de marcher sur toutes les plaques de glace une et une seule fois pour aller à la salle
+							suivante.<br />
+							TODO: Pouvoir générer de nouvelles salles de manière aléatoire et SOLUBLE.
+						</p>
+					</a>
+				</article>
+				<article>
+					<a href="/tictactoe" target="_self">
+						<h3>tictactoe - 2020</h3>
+						<p>Un mini-jeu du morpion avec COCOs.JS
+						</p>
+					</a>
+				</article>
+				<article>
+					<a href="https://github.com/RodolphePoon/octorecipe">
+						<h3>octorecipe - 2018</h3>
+						<p>
+							Une application mobile de 8 recettes de poulpes avec React Native et Expo.
+							Inspiré par Jian Yang de la série Silicon Valley.
+							TODO: hotdog or not hotdog
+						</p>
+					</a>
+				</article>
+			</div>
+		</section>
+		<section id="experience">
+			<h2>
+				02. Mes dernières expériences professionnelles
+			</h2>
+			<a href="/Rodolphe%20POON%202024%20%28en%29.pdf" download>Télécharger</a>
+			<article>
+				<details>
+					<summary>
+						<h3>Développeur FullStack Sénior @ Finfrog - 2022-2025 <address>Paris, France</address>
+						</h3>
+						<span>Finfrog est une fintech spécialiste du crédit instantané pour les particuliers.
+							Depuis 2025, il a obtenu le statut de Société de Financement</span>
+					</summary>
+					<p>
+						- Refonte graphique de l'espace client, permettant à l'utilisateur de mieux voir l'avancement de son prêt
+						et donc mieux rembourser ses échéances et réduire les défauts de crédit
+					</p>
+					<p>
+						- Refonte du processus automatique de financement instantané à 99,9% de réussite.
+						Implémentation de plusieurs mini-processus qui gèrent chacun les différentes étapes de manière indépendante.
+					</p>
+					<p>
+						- Intégration des directives réglementaires de l’ACPR en vue de l’obtention de l’agrément bancaire.
+						Mieux informer le client sur les risques et les obligations d'un prêt.
+					</p>
+				</details>
+			</article>
+			<article>
+				<details>
+					<summary>
+						<h3>Développeur FullStack @ Société Générale - 2020-2022 <address>Fontenay-sous-bois, France</address>
+						</h3>
+					</summary>
+					<p>
+						- Migration d’une application de gestion de projet depuis AngularJS/Loopback 2 vers ReactJS/NestJS.
+						Migration "iso prod", fonctionnalité par fonctionnalité.
+					</p>
+					<p>
+						- Implémentation de fonctionnalités dans une application de gestion des ressources. <br>
+						Durant la période COVID, la Société Générale a besoin de nouvelles fonctionnalités pour gérer ses ressources:
+						voir/reserver des places sur site
+					</p>
+				</details>
+			</article>
+			<article>
+				<details>
+					<summary>
+						<h3>Développeur Front-End @ Credit Agricole CACIB - 2019-2019 <address>Montrouge, France</address>
+						</h3>
+					</summary>
+					<p>
+						- Développement d’une nouvelle application de visualisation pour le pôle Risk Management.
+						Dans le cadre de la mise en production d'un DataLake chez CACIB, permettre au pôle Risk Management
+						de pourvoir visualiser et exploiter ces données.
+					</p>
+				</details>
+			</article>
+		</section>
+		<section id="other">
+			<h2>
+				03. Fourre-tout
+			</h2>
+			<div class="grid">
+				<article>
+					<a href="https://chatgpt.com/?model=auto" target="_self">
+						<h3>Boite à outil</h3>
+						<p>Pour faire des trucs</p>
+					</a>
+				</article>
+				<article>
+					<a href="/" target="_self">
+						<h3>Marque-page</h3>
+						<p>Des sites qui m'intéressent (ou pas)</p>
+					</a>
+				</article>
+				<article>
+					<a href="https://www.youtube.com/playlist?list=PLXKAG8g1Ls_Ax-SU7rCgyiGWjylB5NHL-" target="_self">
+						<h3>Ma playlist youtube</h3>
+						<p>Des vidéos qui méritent d'être dans le patrimoine culturel immatériel de l'UNESCO</p>
+					</a>
+				</article>
+				<article>
+					<a href="https://letterboxd.com/" target="_self">
+						<h3>Mon Letterbox</h3>
+						<p>Mes avis tranchés sur tes films préférés</p>
+					</a>
+				</article>
+			</div>
+		</section>
+		<section class="mobile-footer">
+			Rodolphe Poon - 2025
+		</section>
+	</main>
+</body>
+
+</html>
